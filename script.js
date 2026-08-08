@@ -3,15 +3,14 @@ const COLORS = [
   { code: 'g', name: 'Vert',             hex: '#3ddc55' },
   { code: 'b', name: 'Bleu',             hex: '#4b9bff' },
   { code: 'y', name: 'Jaune',            hex: '#ffe24c' },
-  { code: 'p', name: 'Violet / rose',    hex: '#b36bff' },
+  { code: 'p', name: 'Violet',    hex: '#b36bff' },
   { code: 'q', name: 'Rose',             hex: '#ff6bcf' },
   { code: 'o', name: 'Orange',           hex: '#ff9a3d' },
   { code: 'c', name: 'Gris clair',       hex: '#cfd2da' },
   { code: 'm', name: 'Gris foncé',       hex: '#5a5d68' },
   { code: 'u', name: 'Noir',             hex: '#000000' },
   { code: 's', name: 'Couleur normale',  hex: null },
-  { code: 'w', name: 'Blanc',            hex: '#ffffff' },
-  { code: 'l', name: 'Noir / gris sombre', hex: '#1c1d22' },
+  { code: 'l', name: 'Noir', hex: '#1c1d22' },
   { code: 'd', name: 'Gris',             hex: '#8a8d99' },
 ];
 
@@ -21,16 +20,19 @@ const colorMap = Object.fromEntries(COLORS.map(c => [c.code, c.hex]));
 const editor = document.getElementById('editor');
 const preview = document.getElementById('preview');
 const palette = document.getElementById('palette');
+const resetColorBtn = document.getElementById('resetColorBtn');
 const refTable = document.getElementById('refTable');
 const copyBtn = document.getElementById('copyBtn');
 const clearBtn = document.getElementById('clearBtn');
 const copiedMsg = document.getElementById('copiedMsg');
 
-// Build palette buttons
-COLORS.forEach(c => {
+// Build palette buttons (grille de 6 couleurs par ligne, voir style.css).
+// Le bouton "Réinitialiser" est un sibling flex à côté de la grille (voir index.html /
+// .palette-row en CSS) : il s'étire automatiquement sur toute la hauteur des lignes de couleurs.
+COLORS.filter(c => c.code !== 's').forEach(c => {
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.className = 'swatch' + (c.code === 's' ? ' reset-btn' : '');
+  btn.className = 'swatch';
   const dotColor = c.hex || DEFAULT_COLOR;
   btn.innerHTML = `
     <span class="dot" style="background:${dotColor}"></span>
@@ -42,6 +44,8 @@ COLORS.forEach(c => {
   btn.addEventListener('click', () => insertColor(c.code));
   palette.appendChild(btn);
 });
+
+resetColorBtn.addEventListener('click', () => insertColor('s'));
 
 // Build reference table
 COLORS.forEach(c => {

@@ -17,8 +17,17 @@
 
   <section class="card">
     <h2>Palette de couleurs</h2>
-    <p class="sub">Sélectionnez du texte dans l'éditeur puis cliquez une couleur pour l'appliquer (retour automatique à la normale ensuite). Sans sélection, le code est simplement inséré au curseur.</p>
-    <div class="palette" id="palette"></div>
+    <p class="sub">Sélectionnez du texte dans l'éditeur puis cliquez une couleur pour l'appliquer : le texte à partir de là restera de cette couleur jusqu'à un réinitialisation ou une autre couleur. Sans sélection, le code est simplement inséré au curseur.</p>
+    <div class="palette-row">
+      <div class="palette" id="palette"></div>
+      <button type="button" class="swatch reset-btn" id="resetColorBtn">
+        <span class="dot" style="background:#e8e8ec"></span>
+        <span class="label">
+          <span class="code">~s~</span>
+          <span class="name">Réinitialiser</span>
+        </span>
+      </button>
+    </div>
   </section>
 
   <section class="card">

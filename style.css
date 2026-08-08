@@ -95,9 +95,17 @@ header p{
   color: var(--text-dim);
 }
 
+.palette-row{
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+}
+
 .palette{
+  flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  /* 6 couleurs par ligne */
+  grid-template-columns: repeat(6, minmax(70px, 1fr));
   gap: 6px;
 }
 
@@ -154,9 +162,17 @@ header p{
 }
 
 .reset-btn{
+  /* Sibling flex de .palette dans .palette-row : align-items:stretch fait que ce
+     bouton prend automatiquement toute la hauteur de la grille de couleurs, quel
+     que soit son nombre de lignes — d'où l'effet "fusionné sur les deux lignes". */
+  flex: 0 0 78px;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  gap: 4px;
   font-weight: 600;
-  border-style: dashed;
+  font-family: inherit;
 }
 
 textarea{
@@ -281,4 +297,20 @@ footer{
 
 @media (max-width: 560px){
   .card{ padding: 16px; }
+
+  /* Sur mobile, 6 colonnes ne tiennent plus : on repasse à 3 par ligne et le bouton
+     reset (qui n'a alors plus de sens "fusionné" verticalement) passe sous la grille. */
+  .palette-row{
+    flex-direction: column;
+  }
+
+  .palette{
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+  }
+
+  .reset-btn{
+    flex: none;
+    flex-direction: row;
+    width: 100%;
+  }
 }
