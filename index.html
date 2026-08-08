@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur de texte coloré pour FiveM</title>
+<meta name="description" content="Générateur de texte coloré pour FiveM (codes ~x~) avec aperçu en direct et copie en un clic.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Générateur de texte coloré pour StoryLife</h1>
+    <p>Composez votre texte, insérez des codes couleur <code>~x~</code>, prévisualisez le rendu et copiez le résultat.</p>
+  </header>
+
+  <section class="card">
+    <h2>Palette de couleurs</h2>
+    <p class="sub">Sélectionnez du texte dans l'éditeur puis cliquez une couleur pour l'appliquer (retour automatique à la normale ensuite). Sans sélection, le code est simplement inséré au curseur.</p>
+    <div class="palette" id="palette"></div>
+  </section>
+
+  <section class="card">
+    <h2>Éditeur</h2>
+    <p class="sub">Écrivez ou collez votre texte ici. Les codes <code>~x~</code> peuvent aussi être tapés manuellement.</p>
+    <textarea id="editor" placeholder="Écrivez votre texte ici… ex: ~r~Attention ~s~ceci est un message important !"></textarea>
+  </section>
+
+  <section class="card">
+    <h2>Aperçu</h2>
+    <p class="sub">Rendu approximatif des couleurs en jeu.</p>
+    <div class="preview" id="preview"></div>
+  </section>
+
+  <section class="card">
+    <div class="actions">
+      <button class="action primary" id="copyBtn">📋 Copier le code</button>
+      <button class="action secondary" id="clearBtn">🗑️ Effacer</button>
+      <span class="copied-msg" id="copiedMsg">✓ Copié dans le presse-papiers !</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Table de référence</h2>
+    <p class="sub">Liste complète des codes couleur disponibles.</p>
+    <table class="ref">
+      <thead>
+        <tr><th>Aperçu</th><th>Code</th><th>Couleur</th></tr>
+      </thead>
+      <tbody id="refTable"></tbody>
+    </table>
+  </section>
+
+  <footer>Générateur statique — aucune donnée n'est envoyée à un serveur.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

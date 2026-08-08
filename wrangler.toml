@@ -1,0 +1,6 @@
+name = "story-color-deploy"
+compatibility_date = "2026-08-08"
+
+# Dossier contenant le site statique à déployer sur Cloudflare Pages.
+# "." car index.html, style.css et script.js sont directement à la racine du dépôt.
+pages_build_output_dir = "."
