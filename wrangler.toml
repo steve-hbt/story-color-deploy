@@ -1,4 +1,4 @@
-name = "story-color"
+name = 'story-color-deploy'
 compatibility_date = "2026-08-08"
 
 [assets]
