@@ -3,7 +3,7 @@ const COLORS = [
   { code: 'g', name: 'Vert',             hex: '#3ddc55' },
   { code: 'b', name: 'Bleu',             hex: '#4b9bff' },
   { code: 'y', name: 'Jaune',            hex: '#ffe24c' },
-  { code: 'p', name: 'Violet',    hex: '#b36bff' },
+  { code: 'p', name: 'Violet',           hex: '#b36bff' },
   { code: 'o', name: 'Orange',           hex: '#ff9a3d' },
   { code: 'c', name: 'Gris clair',       hex: '#cfd2da' },
   { code: 'm', name: 'Gris foncé',       hex: '#5a5d68' },
