@@ -25,6 +25,9 @@ const refTable = document.getElementById('refTable');
 const copyBtn = document.getElementById('copyBtn');
 const clearBtn = document.getElementById('clearBtn');
 const copiedMsg = document.getElementById('copiedMsg');
+const openRefBtn = document.getElementById('openRefBtn');
+const closeRefBtn = document.getElementById('closeRefBtn');
+const refModalOverlay = document.getElementById('refModalOverlay');
 
 // Build palette buttons (grille de 6 couleurs par ligne, voir style.css).
 // Le bouton "Réinitialiser" est un sibling flex à côté de la grille (voir index.html /
@@ -132,6 +135,28 @@ clearBtn.addEventListener('click', () => {
   editor.value = '';
   editor.focus();
   updatePreview();
+});
+
+function openRefModal(){
+  refModalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRefModal(){
+  refModalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+openRefBtn.addEventListener('click', openRefModal);
+closeRefBtn.addEventListener('click', closeRefModal);
+
+// Ferme la modal en cliquant sur le fond, mais pas sur son contenu.
+refModalOverlay.addEventListener('click', (e) => {
+  if (e.target === refModalOverlay) closeRefModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && refModalOverlay.classList.contains('open')) closeRefModal();
 });
 
 updatePreview();

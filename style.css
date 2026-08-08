@@ -295,6 +295,71 @@ footer{
   font-size: 12px;
 }
 
+footer p{ margin: 4px 0; }
+
+.modal-overlay{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 14, 0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal-overlay.open{ display: flex; }
+
+.modal{
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.modal-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modal-close{
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 9px;
+  border-radius: 8px;
+  transition: color .12s ease, background .12s ease;
+}
+
+.modal-close:hover{
+  color: var(--text);
+  background: var(--bg-alt);
+}
+
+.modal-body{
+  padding: 12px 16px 16px;
+  overflow-y: auto;
+}
+
 @media (max-width: 560px){
   .card{ padding: 16px; }
 

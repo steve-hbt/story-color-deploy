@@ -53,15 +53,30 @@
   <section class="card">
     <h2>Table de référence</h2>
     <p class="sub">Liste complète des codes couleur disponibles.</p>
-    <table class="ref">
-      <thead>
-        <tr><th>Aperçu</th><th>Code</th><th>Couleur</th></tr>
-      </thead>
-      <tbody id="refTable"></tbody>
-    </table>
+    <button type="button" class="action secondary" id="openRefBtn">📖 Voir la table de référence</button>
   </section>
 
-  <footer>Générateur statique — aucune donnée n'est envoyée à un serveur.</footer>
+  <footer>
+    <p>Générateur statique — aucune donnée n'est envoyée à un serveur.</p>
+    <p>© Swakez</p>
+  </footer>
+</div>
+
+<div class="modal-overlay" id="refModalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="refModalTitle">
+    <div class="modal-header">
+      <h2 id="refModalTitle">Table de référence</h2>
+      <button type="button" class="modal-close" id="closeRefBtn" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <table class="ref">
+        <thead>
+          <tr><th>Aperçu</th><th>Code</th><th>Couleur</th></tr>
+        </thead>
+        <tbody id="refTable"></tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
