@@ -5,10 +5,7 @@ const COLORS = [
   { code: 'y', name: 'Jaune',            hex: '#ffe24c' },
   { code: 'p', name: 'Violet',           hex: '#b36bff' },
   { code: 'o', name: 'Orange',           hex: '#ff9a3d' },
-  { code: 'c', name: 'Gris clair',       hex: '#cfd2da' },
-  { code: 'm', name: 'Gris foncé',       hex: '#5a5d68' },
   { code: 's', name: 'Couleur normale',  hex: null },
-  { code: 'd', name: 'Gris',             hex: '#8a8d99' },
 ];
 
 const DEFAULT_COLOR = '#e8e8ec';
@@ -37,8 +34,8 @@ COLORS.filter(c => c.code !== 's').forEach(c => {
   btn.innerHTML = `
     <span class="dot" style="background:${dotColor}"></span>
     <span class="label">
-      <span class="code">~${c.code}~</span>
-      <span class="name">${c.name}</span>
+      <span class="code">${c.name}</span>
+      <span class="name">~${c.code}~</span>
     </span>
   `;
   btn.addEventListener('click', () => insertColor(c.code));
