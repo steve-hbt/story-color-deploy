@@ -4,13 +4,10 @@ const COLORS = [
   { code: 'b', name: 'Bleu',             hex: '#4b9bff' },
   { code: 'y', name: 'Jaune',            hex: '#ffe24c' },
   { code: 'p', name: 'Violet',    hex: '#b36bff' },
-  { code: 'q', name: 'Rose',             hex: '#ff6bcf' },
   { code: 'o', name: 'Orange',           hex: '#ff9a3d' },
   { code: 'c', name: 'Gris clair',       hex: '#cfd2da' },
   { code: 'm', name: 'Gris foncé',       hex: '#5a5d68' },
-  { code: 'u', name: 'Noir',             hex: '#000000' },
   { code: 's', name: 'Couleur normale',  hex: null },
-  { code: 'l', name: 'Noir', hex: '#1c1d22' },
   { code: 'd', name: 'Gris',             hex: '#8a8d99' },
 ];
 
